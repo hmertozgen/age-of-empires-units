@@ -1,0 +1,52 @@
+.home-page {
+  background-image: url("../images/ageof2.jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top 35% right 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.home-page:hover {
+  margin: 0 auto;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  -webkit-transition: 2s;
+  transition: 2s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.home-page:hover .button {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+}
+
+.button {
+  position: fixed;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+/*# sourceMappingURL=Homepage.css.map */

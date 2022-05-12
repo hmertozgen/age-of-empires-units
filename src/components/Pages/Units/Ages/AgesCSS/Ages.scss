@@ -1,0 +1,9 @@
+@import "../../../../ScssVariables/Variables.scss";
+.ages {
+  .age {
+    cursor: pointer;
+  }
+  .active {
+    background-color: $greenColor;
+  }
+}

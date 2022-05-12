@@ -1,0 +1,34 @@
+.home-page {
+  background-image: url("../images/ageof2.jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top 35% right 0;
+  //   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  transform: scale(1.2);
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:hover {
+    margin: 0 auto;
+
+    filter: blur(4px);
+
+    transition: 2s;
+    transform: scale(1);
+    .button {
+      filter: blur(0px);
+    }
+  }
+}
+.button {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}

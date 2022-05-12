@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AACE,KADG,CACH,IAAI,CAAC;EACH,MAAM,EAAE,OAAO;CAChB;;AAHH,AAIE,KAJG,CAIH,OAAO,CAAC;EACN,gBAAgB,ECJP,OAAiB;CDK3B",
+    "sources": [
+        "Ages.scss",
+        "../../../../ScssVariables/Variables.scss"
+    ],
+    "names": [],
+    "file": "Ages.css"
+}
