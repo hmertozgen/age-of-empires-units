@@ -22,7 +22,7 @@ function UnitDetails({ productId, setProductId }) {
         </thead>
         <tbody>
           <tr>
-            <td>{AgeOfUnits.units.id === productId && <>{productId}</>}</td>
+            {/* <td>{AgeOfUnits.units.id === productId && <>{productId}</>}</td> */}
           </tr>
         </tbody>
       </table>
