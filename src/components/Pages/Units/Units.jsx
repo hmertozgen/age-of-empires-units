@@ -3,6 +3,7 @@ import Ages from "./Ages/Ages";
 import Datatable from "./Table/Datatable";
 
 import AgeOfUnits from "../../../age-of-empires-units.json";
+import Costs from "./Costs/Costs";
 
 const allAges = ["All", ...new Set(AgeOfUnits.units.map((item) => item.age))];
 
@@ -22,6 +23,9 @@ function Units({ productId, setProductId }) {
   return (
     <div className="container">
       <Ages button={buttons} filter={filter} />
+      <div className="mt-4 mb-4">
+        <Costs />
+      </div>
       <Datatable
         productId={productId}
         setProductId={setProductId}
