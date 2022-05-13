@@ -54,7 +54,6 @@ function Ages({ button, filter }) {
               >
                 <button
                   type="button"
-                  activeClassName="active-link"
                   className="btn w-100"
                   onClick={() => {
                     filter("Dark");

@@ -12,7 +12,7 @@ import UnitDetails from "./components/Pages/UnitsDetail/UnitDetails.jsx";
 import { useState } from "react";
 
 function App() {
-  const [productId, setProductId] = useState();
+  const [productId, setProductId] = useState(1);
   const { id } = useParams();
   return (
     <>

@@ -1,6 +1,5 @@
+import { useMenuItem } from "@mui/base";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
 
 import AgeOfUnits from "../../../age-of-empires-units.json";
 
@@ -8,35 +7,17 @@ function UnitDetails({ productId, setProductId }) {
   const [unit, setUnit] = useState({});
   // const id = useParams();
   // const currentUrl = window.location.href;
-  // console.log(currentUrl);
-  // console.log(currentUrl.includes(productId));
 
   useEffect(() => {
     const filterUnit = AgeOfUnits.units.filter((item) => item.id === productId);
     setUnit(filterUnit[0]);
-
-    // console.log(unit);
-    // console.log(filterUnit[0]);
-    // console.log(unit.cost.Wood);
   }, [productId]);
-  // let that = unit.cost;
-
-  // const handleWood = () => {
-  //   console.log(unit.cost.Wood);
-  //   if (!unit.cost) {
-  //     return <td>Null</td>;
-  //   }
-  //   if (unit.cost.Wood) {
-  //     return <td>{unit.cost.Wood}</td>;
-  //   }
-  // };
 
   return (
     <>
+      <div className="text-center fs-2">{unit.name}</div>
       <table className="table table-striped">
-        <thead>
-          <tr></tr>
-        </thead>
+        <thead className="mx-auto  "></thead>
         <tbody>
           <tr>
             <th>ID:</th>
@@ -55,19 +36,35 @@ function UnitDetails({ productId, setProductId }) {
             <td>{unit.age}</td>
           </tr>
           <tr>
-            <th>Wood:</th>
-            {/* {that.Wood ? <td>sa</td> : null} */}
+            <th>Wood Cost:</th>
+            <td>
+              {unit.cost ? (
+                unit.cost.Wood ? (
+                  <td>{unit.cost.Wood}</td>
+                ) : null
+              ) : null}
+            </td>
           </tr>
-          {/* <tr>
+          <tr>
             <th>Food Cost:</th>
-            {unit.cost.Food ? <>{<td>{unit.cost.Food}</td>}</> : <td>Null</td>}
-            
-          </tr> */}
-          {/* <tr>
-            
-            {unit.Gold === null && <td>Null</td>}
-            {unit.Gold !== null && <td>{unit.cost.Gold}</td>}
-          </tr> */}
+            <td>
+              {unit.cost ? (
+                unit.cost.Food ? (
+                  <td>{unit.cost.Food}</td>
+                ) : null
+              ) : null}
+            </td>
+          </tr>
+          <tr>
+            <th>Gold Cost:</th>
+            <td>
+              {unit.cost ? (
+                unit.cost.Gold ? (
+                  <td>{unit.cost.Gold}</td>
+                ) : null
+              ) : null}
+            </td>
+          </tr>
           <tr>
             <th>Build Time:</th>
             <td>{unit.build_time}</td>

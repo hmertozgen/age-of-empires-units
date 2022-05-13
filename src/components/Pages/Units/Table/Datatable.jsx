@@ -24,11 +24,21 @@ function Datatable({ productId, setProductId, menuItem }) {
                     key={item.id}
                     to={`/units/${item.id}`}
                     onClick={() => setProductId(item.id)}
+                    className="text-dark text-decoration-none"
                   >
                     {item.id}
                   </Link>
                 </td>
-                <td>{item.name}</td>
+                <td>
+                  <Link
+                    key={item.id}
+                    to={`/units/${item.id}`}
+                    onClick={() => setProductId(item.id)}
+                    className="text-dark text-decoration-none"
+                  >
+                    {item.name}
+                  </Link>
+                </td>
                 <td>{item.age}</td>
                 <td>
                   {item.cost == null && <span>Null</span>}
