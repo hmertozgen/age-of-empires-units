@@ -2,15 +2,30 @@ import { Slider } from "@mui/material";
 import React, { useState } from "react";
 import "./CostsCSS/Costs.css";
 
-function Costs() {
-  const [woodCheck, setWoodCheck] = useState(false);
-  const [foodCheck, setFoodCheck] = useState(false);
-  const [goldCheck, setGoldCheck] = useState(false);
-  const [valueWood, setValueWood] = useState([20, 70]);
-  const [valueFood, setValueFood] = useState([20, 70]);
-  const [valueGold, setValueGold] = useState([20, 70]);
+function Costs({
+  valueWood,
+  setValueWood,
+  valueFood,
+  setValueFood,
+  valueGold,
+  setValueGold,
+  woodCheck,
+  setWoodCheck,
+  foodCheck,
+  setFoodCheck,
+  goldCheck,
+  setGoldCheck,
+  filterCosts,
+}) {
+  // const [woodCheck, setWoodCheck] = useState(false);
+  // const [foodCheck, setFoodCheck] = useState(false);
+  // const [goldCheck, setGoldCheck] = useState(false);
+  // const [valueWood, setValueWood] = useState([20, 70]);
+  // const [valueFood, setValueFood] = useState([20, 70]);
+  // const [valueGold, setValueGold] = useState([20, 70]);
   const changeValueWood = (event, value) => {
     setValueWood(value);
+    filterCosts(valueWood);
   };
   const changeValueFood = (event, value) => {
     setValueFood(value);
@@ -21,14 +36,17 @@ function Costs() {
   const getText = (value) => {
     return `${value}`;
   };
-  const showSlider = (e) => {
-    e.checked ? setWoodCheck(true) : setWoodCheck(false);
-  };
+
   return (
     <>
       <div className="main row">
         <div className="col-2">
-          <input type="checkbox" onChange={() => setWoodCheck(!woodCheck)} />
+          <input
+            type="checkbox"
+            onChange={() => {
+              setWoodCheck(!woodCheck);
+            }}
+          />
           Wood
         </div>
         <Slider

@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import AgeOfUnits from "../../../../age-of-empires-units.json";
 import UnitDetails from "../../UnitsDetail/UnitDetails";
 
-function Datatable({ productId, setProductId, menuItem }) {
+function Datatable({ productId, setProductId, menuItem, menuItemWood }) {
+  const filteredArray1 = menuItem.filter((value) =>
+    menuItemWood.includes(value)
+  );
   return (
     <div>
       <table className="table table-striped">
@@ -16,7 +19,7 @@ function Datatable({ productId, setProductId, menuItem }) {
           </tr>
         </thead>
         <tbody>
-          {menuItem.map((item) => {
+          {filteredArray1.map((item) => {
             return (
               <tr key={item.id}>
                 <td>
