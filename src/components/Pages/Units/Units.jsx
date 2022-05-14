@@ -9,9 +9,9 @@ const allAges = ["All", ...new Set(AgeOfUnits.units.map((item) => item.age))];
 
 function Units({ productId, setProductId }) {
   const [btnState, setBtnState] = useState(1);
-  const [valueWood, setValueWood] = useState([20, 70]);
-  const [valueFood, setValueFood] = useState([20, 70]);
-  const [valueGold, setValueGold] = useState([20, 70]);
+  const [valueWood, setValueWood] = useState([0, 200]);
+  const [valueFood, setValueFood] = useState([0, 200]);
+  const [valueGold, setValueGold] = useState([0, 200]);
   const [woodCheck, setWoodCheck] = useState(true);
   const [foodCheck, setFoodCheck] = useState(true);
   const [goldCheck, setGoldCheck] = useState(true);
@@ -36,6 +36,7 @@ function Units({ productId, setProductId }) {
           unit.cost.Food <= valueFood[1]
       );
       setMenuItem(filteredWoods);
+      return;
     } else if (woodCheck === false && foodCheck === false && btnState === 2) {
       const filteredWoods = AgeOfUnits.units.filter(
         (unit) =>
@@ -47,6 +48,7 @@ function Units({ productId, setProductId }) {
           unit.age === "Dark"
       );
       setMenuItem(filteredWoods);
+      return;
     } else if (woodCheck === false && foodCheck === false && btnState === 3) {
       const filteredWoods = AgeOfUnits.units.filter(
         (unit) =>
@@ -58,6 +60,7 @@ function Units({ productId, setProductId }) {
           unit.age === "Feudal"
       );
       setMenuItem(filteredWoods);
+      return;
     } else if (woodCheck === false && foodCheck === false && btnState === 4) {
       const filteredWoods = AgeOfUnits.units.filter(
         (unit) =>
@@ -69,6 +72,7 @@ function Units({ productId, setProductId }) {
           unit.age === "Castle"
       );
       setMenuItem(filteredWoods);
+      return;
     } else if (woodCheck === false && foodCheck === false && btnState === 5) {
       const filteredWoods = AgeOfUnits.units.filter(
         (unit) =>
@@ -80,6 +84,7 @@ function Units({ productId, setProductId }) {
           unit.age === "Imperial"
       );
       setMenuItem(filteredWoods);
+      return;
     } else if (woodCheck === false && goldCheck === false && btnState === 1) {
       const filteredWoods = AgeOfUnits.units.filter(
         (unit) =>
@@ -90,6 +95,7 @@ function Units({ productId, setProductId }) {
           unit.cost.Gold <= valueGold[1]
       );
       setMenuItem(filteredWoods);
+      return;
     } else if (woodCheck === false && goldCheck === false && btnState === 2) {
       const filteredWoods = AgeOfUnits.units.filter(
         (unit) =>
@@ -101,6 +107,7 @@ function Units({ productId, setProductId }) {
           unit.age === "Dark"
       );
       setMenuItem(filteredWoods);
+      return;
     } else if (woodCheck === false && goldCheck === false && btnState === 3) {
       const filteredWoods = AgeOfUnits.units.filter(
         (unit) =>
@@ -112,6 +119,7 @@ function Units({ productId, setProductId }) {
           unit.age === "Feudal"
       );
       setMenuItem(filteredWoods);
+      return;
     } else if (woodCheck === false && goldCheck === false && btnState === 4) {
       const filteredWoods = AgeOfUnits.units.filter(
         (unit) =>
@@ -123,6 +131,7 @@ function Units({ productId, setProductId }) {
           unit.age === "Castle"
       );
       setMenuItem(filteredWoods);
+      return;
     } else if (woodCheck === false && goldCheck === false && btnState === 5) {
       const filteredWoods = AgeOfUnits.units.filter(
         (unit) =>
