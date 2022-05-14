@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import "./CostsCSS/Costs.css";
 
 function Costs() {
+  const [woodCheck, setWoodCheck] = useState(false);
+  const [foodCheck, setFoodCheck] = useState(false);
+  const [goldCheck, setGoldCheck] = useState(false);
   const [valueWood, setValueWood] = useState([20, 70]);
   const [valueFood, setValueFood] = useState([20, 70]);
   const [valueGold, setValueGold] = useState([20, 70]);
@@ -18,11 +21,14 @@ function Costs() {
   const getText = (value) => {
     return `${value}`;
   };
+  const showSlider = (e) => {
+    e.checked ? setWoodCheck(true) : setWoodCheck(false);
+  };
   return (
     <>
       <div className="main row">
         <div className="col-2">
-          <input type="checkbox" />
+          <input type="checkbox" onChange={() => setWoodCheck(!woodCheck)} />
           Wood
         </div>
         <Slider
@@ -30,6 +36,7 @@ function Costs() {
           min={0}
           max={200}
           //   marks
+          disabled={woodCheck}
           value={valueWood}
           onChange={changeValueWood}
           getAriaValueText={getText}
@@ -39,7 +46,7 @@ function Costs() {
       </div>
       <div className="main row">
         <div className="col-2">
-          <input type="checkbox" />
+          <input type="checkbox" onChange={() => setFoodCheck(!foodCheck)} />
           Food
         </div>
         <Slider
@@ -47,6 +54,7 @@ function Costs() {
           min={0}
           max={200}
           //   marks
+          disabled={foodCheck}
           value={valueFood}
           onChange={changeValueFood}
           getAriaValueText={getText}
@@ -56,7 +64,7 @@ function Costs() {
       </div>
       <div className="main row">
         <div className="col-2">
-          <input type="checkbox" />
+          <input type="checkbox" onChange={() => setGoldCheck(!goldCheck)} />
           Gold
         </div>
         <Slider
@@ -64,6 +72,7 @@ function Costs() {
           min={0}
           max={200}
           //   marks
+          disabled={goldCheck}
           value={valueGold}
           onChange={changeValueGold}
           getAriaValueText={getText}
