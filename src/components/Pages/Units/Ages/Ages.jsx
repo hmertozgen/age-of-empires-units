@@ -3,8 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import "./AgesCSS/Ages.css";
 
-function Ages({ button, filter }) {
-  const [btnState, setBtnState] = useState(1);
+function Ages({ button, filter, btnState, setBtnState }) {
   function handleClick(index) {
     setBtnState(index);
   }

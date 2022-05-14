@@ -15,7 +15,7 @@ function Costs({
   setFoodCheck,
   goldCheck,
   setGoldCheck,
-  filterCosts,
+  // filterCosts,
 }) {
   // const [woodCheck, setWoodCheck] = useState(false);
   // const [foodCheck, setFoodCheck] = useState(false);
@@ -25,7 +25,7 @@ function Costs({
   // const [valueGold, setValueGold] = useState([20, 70]);
   const changeValueWood = (event, value) => {
     setValueWood(value);
-    filterCosts(valueWood);
+    // filterCosts(valueWood);
   };
   const changeValueFood = (event, value) => {
     setValueFood(value);
