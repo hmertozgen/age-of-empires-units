@@ -1,15 +1,24 @@
 import { useMenuItem } from "@mui/base";
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import AgeOfUnits from "../../../age-of-empires-units.json";
 
-function UnitDetails({ productId, setProductId }) {
+function UnitDetails({ productId, setProductId, setRefId, refId }) {
+  const { id } = useParams();
+
+  setRefId(Number(id));
+  setProductId(refId);
+
   const [unit, setUnit] = useState({});
-  // const id = useParams();
-  // const currentUrl = window.location.href;
+
+  // useEffect(() => {
+  //   setProductId(id);
+  // }, [id]);
 
   useEffect(() => {
     const filterUnit = AgeOfUnits.units.filter((item) => item.id === productId);
+    console.log(filterUnit[0]);
     setUnit(filterUnit[0]);
   }, [productId]);
 

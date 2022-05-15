@@ -12,30 +12,33 @@ import UnitDetails from "./components/Pages/UnitsDetail/UnitDetails.jsx";
 import { useState } from "react";
 
 function App() {
-  const [productId, setProductId] = useState(1);
-  const { id } = useParams();
+  const [refId, setRefId] = useState(2);
+
+  const [productId, setProductId] = useState(refId);
+
   return (
-    <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/home" element={<Home />}></Route>
-          <Route
-            path="/units"
-            element={
-              <Units productId={productId} setProductId={setProductId} />
-            }
-          ></Route>
-          <Route
-            path="/units/:productId"
-            element={
-              <UnitDetails productId={productId} setProductId={setProductId} />
-            }
-          ></Route>
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" exact element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route
+          path="/units"
+          element={<Units productId={productId} setProductId={setProductId} />}
+        ></Route>
+        <Route
+          path="/units/:id"
+          element={
+            <UnitDetails
+              productId={productId}
+              setProductId={setProductId}
+              setRefId={setRefId}
+              refId={refId}
+            />
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

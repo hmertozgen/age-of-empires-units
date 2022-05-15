@@ -25,6 +25,63 @@ function Units({ productId, setProductId }) {
       setMenuItem([]);
       return;
     }
+    if (
+      woodCheck === true &&
+      foodCheck === true &&
+      goldCheck === true &&
+      btnState === 1
+    ) {
+      setMenuItem(AgeOfUnits.units);
+      return;
+    }
+    if (
+      woodCheck === true &&
+      foodCheck === true &&
+      goldCheck === true &&
+      btnState === 2
+    ) {
+      const filteredWoods = AgeOfUnits.units.filter(
+        (unit) => unit.age === "Dark"
+      );
+      setMenuItem(filteredWoods);
+      return;
+    }
+    if (
+      woodCheck === true &&
+      foodCheck === true &&
+      goldCheck === true &&
+      btnState === 3
+    ) {
+      const filteredWoods = AgeOfUnits.units.filter(
+        (unit) => unit.age === "Feudal"
+      );
+      setMenuItem(filteredWoods);
+      return;
+    }
+    if (
+      woodCheck === true &&
+      foodCheck === true &&
+      goldCheck === true &&
+      btnState === 4
+    ) {
+      const filteredWoods = AgeOfUnits.units.filter(
+        (unit) => unit.age === "Castle"
+      );
+      setMenuItem(filteredWoods);
+      return;
+    }
+    if (
+      woodCheck === true &&
+      foodCheck === true &&
+      goldCheck === true &&
+      btnState === 5
+    ) {
+      const filteredWoods = AgeOfUnits.units.filter(
+        (unit) => unit.age === "Imperial"
+      );
+      setMenuItem(filteredWoods);
+      return;
+    }
 
     if (woodCheck === false && foodCheck === false && btnState === 1) {
       const filteredWoods = AgeOfUnits.units.filter(
