@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAC;EAEJ,MAAM,EAAE,IAAI;CAMb",
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EAEJ,MAAM,EAAE,IAAI;CAMb;;AARD,AAKE,KALG,CAKH,OAAO,CAAC;EACN,YAAY,EAAE,GAAG;CAClB",
     "sources": [
         "Costs.scss"
     ],

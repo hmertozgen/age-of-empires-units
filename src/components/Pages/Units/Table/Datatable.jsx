@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import AgeOfUnits from "../../../../age-of-empires-units.json";
-import UnitDetails from "../../UnitsDetail/UnitDetails";
 
-function Datatable({ productId, setProductId, menuItem, menuItemWood }) {
+function Datatable({ setProductId, menuItem }) {
   return (
+    // Units Table Components JSX Codes START
+
     <div>
       <table className="table table-striped">
         <thead>
@@ -59,70 +59,7 @@ function Datatable({ productId, setProductId, menuItem, menuItemWood }) {
       </table>
     </div>
 
-    //   <div>
-    //     <table className="table table-bordered">
-    //       <thead>
-    //         <tr>
-    //           <th scope="col">id</th>
-    //           <th scope="col">name</th>
-    //           <th scope="col">age</th>
-    //           <th scope="col">costs</th>
-    //         </tr>
-    //       </thead>
-    //       <tbody>
-    //         <tr>
-    //           <th scope="row">
-    //             {menuItem.map((unit) => {
-    //               return (
-    //                 <Link key={unit.id} to={`/units/${unit.id}` }>
-    //                   <div className="box" key={unit.id}>
-    //                     {unit.id}
-    //                   </div>
-    //                 </Link>
-    //               );
-    //             })}
-    //           </th>
-    //           <td>
-    //             {menuItem.map((unit) => {
-    //               return (
-    //                 <div className="box" key={unit.id}>
-    //                   {unit.name}
-    //                 </div>
-    //               );
-    //             })}
-    //           </td>
-    //           <td>
-    //             {menuItem.map((unit) => {
-    //               return (
-    //                 <div className="box" key={unit.id}>
-    //                   {unit.age}
-    //                 </div>
-    //               );
-    //             })}
-    //           </td>
-    // <td>
-    //   {menuItem.map((unit) => {
-    //     return (
-    //       <div className="box" key={unit.id}>
-    //         {unit.cost == null && <span>Null</span>}
-    //         {unit.cost !== null && unit.cost.Gold ? (
-    //           <span>{` Gold:${unit.cost.Gold} `}</span>
-    //         ) : null}
-
-    //         {unit.cost !== null && unit.cost.Food ? (
-    //           <span>{` Food:${unit.cost.Food} `}</span>
-    //         ) : null}
-    //         {unit.cost !== null && unit.cost.Wood ? (
-    //           <span>{` Wood:${unit.cost.Wood} `}</span>
-    //         ) : null}
-    //       </div>
-    //     );
-    //   })}
-    // </td>
-    //         </tr>
-    //       </tbody>
-    //     </table>
-    //   </div>
+    // Units Table Components JSX Codes END
   );
 }
 

@@ -1,4 +1,8 @@
 .main {
   margin: auto;
 }
+
+.main .slider {
+  margin-right: 50%;
+}
 /*# sourceMappingURL=Costs.css.map */

@@ -1,26 +1,15 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
 
 import "./AgesCSS/Ages.css";
 
-function Ages({ button, filter, btnState, setBtnState }) {
+function Ages({ filter, btnState, setBtnState }) {
   function handleClick(index) {
     setBtnState(index);
   }
   return (
+    // Ages Components JSX Codes START
+
     <>
-      {/* <div>
-        <div>Ages</div>
-        {button.map((age, i) => {
-          return (
-            <div className="col">
-              <button type="button" onClick={() => filter(age)}>
-                {age}
-              </button>
-            </div>
-          );
-        })}
-      </div> */}
       <div className="container">
         <div className="row ages">
           <div className="agesHeader mb-3 mt-5">Ages</div>
@@ -35,7 +24,7 @@ function Ages({ button, filter, btnState, setBtnState }) {
               >
                 <button
                   type="button"
-                  className="btn w-100"
+                  className="btn shadow-none w-100"
                   onClick={() => {
                     filter("All");
                     handleClick(1);
@@ -53,7 +42,7 @@ function Ages({ button, filter, btnState, setBtnState }) {
               >
                 <button
                   type="button"
-                  className="btn w-100"
+                  className="btn shadow-none w-100"
                   onClick={() => {
                     filter("Dark");
                     handleClick(2);
@@ -71,7 +60,7 @@ function Ages({ button, filter, btnState, setBtnState }) {
               >
                 <button
                   type="button"
-                  className="btn w-100"
+                  className="btn shadow-none w-100"
                   onClick={() => {
                     filter("Feudal");
                     handleClick(3);
@@ -89,7 +78,7 @@ function Ages({ button, filter, btnState, setBtnState }) {
               >
                 <button
                   type="button"
-                  className="btn w-100"
+                  className="btn shadow-none w-100"
                   onClick={() => {
                     filter("Castle");
                     handleClick(4);
@@ -107,7 +96,7 @@ function Ages({ button, filter, btnState, setBtnState }) {
               >
                 <button
                   type="button"
-                  className="btn w-100"
+                  className="btn shadow-none w-100"
                   onClick={() => {
                     filter("Imperial");
                     handleClick(5);
@@ -121,6 +110,8 @@ function Ages({ button, filter, btnState, setBtnState }) {
         </div>
       </div>
     </>
+
+    // Ages Components JSX Codes END
   );
 }
 

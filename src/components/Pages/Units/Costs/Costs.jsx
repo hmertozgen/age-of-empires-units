@@ -1,5 +1,5 @@
 import { Slider } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import "./CostsCSS/Costs.css";
 
 function Costs({
@@ -15,17 +15,9 @@ function Costs({
   setFoodCheck,
   goldCheck,
   setGoldCheck,
-  // filterCosts,
 }) {
-  // const [woodCheck, setWoodCheck] = useState(false);
-  // const [foodCheck, setFoodCheck] = useState(false);
-  // const [goldCheck, setGoldCheck] = useState(false);
-  // const [valueWood, setValueWood] = useState([20, 70]);
-  // const [valueFood, setValueFood] = useState([20, 70]);
-  // const [valueGold, setValueGold] = useState([20, 70]);
   const changeValueWood = (event, value) => {
     setValueWood(value);
-    // filterCosts(valueWood);
   };
   const changeValueFood = (event, value) => {
     setValueFood(value);
@@ -38,11 +30,13 @@ function Costs({
   };
 
   return (
+    // Costs Components JSX Codes START
     <>
       <div className="main row">
         <div className="col-2">
           <input
             type="checkbox"
+            className="me-2"
             onChange={() => {
               setWoodCheck(!woodCheck);
             }}
@@ -64,7 +58,11 @@ function Costs({
       </div>
       <div className="main row">
         <div className="col-2">
-          <input type="checkbox" onChange={() => setFoodCheck(!foodCheck)} />
+          <input
+            type="checkbox"
+            className="me-2"
+            onChange={() => setFoodCheck(!foodCheck)}
+          />
           Food
         </div>
         <Slider
@@ -82,7 +80,11 @@ function Costs({
       </div>
       <div className="main row">
         <div className="col-2">
-          <input type="checkbox" onChange={() => setGoldCheck(!goldCheck)} />
+          <input
+            type="checkbox"
+            className="me-2"
+            onChange={() => setGoldCheck(!goldCheck)}
+          />
           Gold
         </div>
         <Slider
@@ -99,6 +101,7 @@ function Costs({
         />
       </div>
     </>
+    // Costs Components JSX Codes END
   );
 }
 

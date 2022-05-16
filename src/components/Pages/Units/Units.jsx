@@ -5,7 +5,7 @@ import Datatable from "./Table/Datatable";
 import AgeOfUnits from "../../../age-of-empires-units.json";
 import Costs from "./Costs/Costs";
 
-const allAges = ["All", ...new Set(AgeOfUnits.units.map((item) => item.age))];
+// const allAges = ["All", ...new Set(AgeOfUnits.units.map((item) => item.age))];
 
 function Units({ productId, setProductId }) {
   const [btnState, setBtnState] = useState(1);
@@ -16,10 +16,8 @@ function Units({ productId, setProductId }) {
   const [foodCheck, setFoodCheck] = useState(true);
   const [goldCheck, setGoldCheck] = useState(true);
   const [menuItem, setMenuItem] = useState(AgeOfUnits.units);
-  const [menuItemWood, setMenuItemWood] = useState(AgeOfUnits.units);
-  const [menuItemFood, setMenuItemFood] = useState(AgeOfUnits.units);
-  const [buttons, setButtons] = useState(allAges);
 
+  /* Display codes of filered datas START */
   useEffect(() => {
     if (woodCheck === false && foodCheck === false && goldCheck === false) {
       setMenuItem([]);
@@ -491,7 +489,9 @@ function Units({ productId, setProductId }) {
     valueGold,
     btnState,
   ]);
+  /* Display codes of filered datas END */
 
+  /* Ages Filter START */
   const filter = (button) => {
     if (button === "All") {
       setMenuItem(AgeOfUnits.units);
@@ -500,36 +500,13 @@ function Units({ productId, setProductId }) {
 
     const filteredData = AgeOfUnits.units.filter((item) => item.age === button);
     setMenuItem(filteredData);
-    // console.log(valueWood[1]);
-    console.log(woodCheck);
   };
-
-  // const filterCosts = (costta) => {
-  //   // if (woodCheck === true) {
-  //   //   setMenuItem2(menuItem);
-  //   //   return;
-  //   // }
-
-  //   if (woodCheck === false) {
-  //     const filteredWoods = AgeOfUnits.units.filter((unit) =>
-  //       unit.cost
-  //         ? unit.cost.Wood >= costta[0] && unit.cost.Wood <= costta[1]
-  //         : ""
-  //     );
-  //     setMenuItemWood(filteredWoods);
-  //   }
-
-  //   console.log(woodCheck);
-  // };
+  /* Ages Filter END */
 
   return (
+    // Units Pages START
     <div className="container">
-      <Ages
-        button={buttons}
-        filter={filter}
-        btnState={btnState}
-        setBtnState={setBtnState}
-      />
+      <Ages filter={filter} btnState={btnState} setBtnState={setBtnState} />
       <div className="mt-4 mb-4">
         <Costs
           valueWood={valueWood}
@@ -544,16 +521,11 @@ function Units({ productId, setProductId }) {
           setFoodCheck={setFoodCheck}
           goldCheck={goldCheck}
           setGoldCheck={setGoldCheck}
-          // filterCosts={filterCosts}
         />
       </div>
-      <Datatable
-        productId={productId}
-        setProductId={setProductId}
-        menuItem={menuItem}
-        menuItem2={menuItemWood}
-      />
+      <Datatable setProductId={setProductId} menuItem={menuItem} />
     </div>
+    // Units Pages END
   );
 }
 

@@ -1,28 +1,26 @@
-import { useMenuItem } from "@mui/base";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import AgeOfUnits from "../../../age-of-empires-units.json";
 
 function UnitDetails({ productId, setProductId, setRefId, refId }) {
+  const [unit, setUnit] = useState({});
   const { id } = useParams();
 
   setRefId(Number(id));
   setProductId(refId);
 
-  const [unit, setUnit] = useState({});
-
-  // useEffect(() => {
-  //   setProductId(id);
-  // }, [id]);
-
+  // Filtered Unit codes to be displayed on the page START
   useEffect(() => {
     const filterUnit = AgeOfUnits.units.filter((item) => item.id === productId);
-    console.log(filterUnit[0]);
+
     setUnit(filterUnit[0]);
   }, [productId]);
+  // Filtered  Unit codes to be displayed on the page END
 
   return (
+    // Unit Details Pages START
+
     <>
       <div className="text-center fs-2">{unit.name}</div>
       <table className="table table-striped">
@@ -47,31 +45,19 @@ function UnitDetails({ productId, setProductId, setRefId, refId }) {
           <tr>
             <th>Wood Cost:</th>
             <td>
-              {unit.cost ? (
-                unit.cost.Wood ? (
-                  <td>{unit.cost.Wood}</td>
-                ) : null
-              ) : null}
+              {unit.cost ? unit.cost.Wood ? <>{unit.cost.Wood}</> : null : null}
             </td>
           </tr>
           <tr>
             <th>Food Cost:</th>
             <td>
-              {unit.cost ? (
-                unit.cost.Food ? (
-                  <td>{unit.cost.Food}</td>
-                ) : null
-              ) : null}
+              {unit.cost ? unit.cost.Food ? <>{unit.cost.Food}</> : null : null}
             </td>
           </tr>
           <tr>
             <th>Gold Cost:</th>
             <td>
-              {unit.cost ? (
-                unit.cost.Gold ? (
-                  <td>{unit.cost.Gold}</td>
-                ) : null
-              ) : null}
+              {unit.cost ? unit.cost.Gold ? <>{unit.cost.Gold}</> : null : null}
             </td>
           </tr>
           <tr>
@@ -97,6 +83,7 @@ function UnitDetails({ productId, setProductId, setRefId, refId }) {
         </tbody>
       </table>
     </>
+    // Unit Details Pages END
   );
 }
 
